@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.5" />
+    <title>Memory Game</title>
+    <meta name="description" content="" />
+    <script
+      src="https://kit.fontawesome.com/21dd8fd46c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <div class="container">
+      <section id="start">
+        <h1>Memory Game</h1>
+        <button id="start-button">Start!</button>
+      </section>
+    <main>
+      <section class="score-panel row">
+        <div id="restartButton" class="restart col-2">
+          <i class="fa fa-repeat"></i>
+        </div>
+
+        <div id="timeElapsed" class=" col-2">
+          <span id="secondsElapsed">0</span> s
+        </div>
+
+        <div class="col-2"><span id="movesNumberDisplay">0</span> Moves</div>
+
+        <div class="col-3">
+          <span id="matchedCoupleDisplay">0</span> /8 Matched
+        </div>
+
+        <div class="col-3">
+         Best Score: <span id="best-score"></span>
+        </div>
+      </section>
+
+      <ul id="deck" class="deck">
+        <li class="card javascript">
+          <i class="fab fa-js-square"></i>
+        </li>
+        <li class="card java">
+          <i class="fab fa-java"></i>
+        </li>
+        <li class="card python">
+          <i class="fab fa-python"></i>
+        </li>
+        <li class="card node">
+          <i class="fab fa-node-js"></i>
+        </li>
+        <li class="card css">
+          <i class="fab fa-css3-alt"></i>
+        </li>
+        <li class="card html">
+          <i class="fab fa-html5"></i>
+        </li>
+        <li class="card react">
+          <i class="fab fa-react"></i>
+        </li>
+        <li class="card bootstrap">
+          <i class="fab fa-bootstrap"></i>
+        </li>
+        <li class="card javascript">
+          <i class="fab fa-js-square"></i>
+        </li>
+        <li class="card java">
+          <i class="fab fa-java"></i>
+        </li>
+        <li class="card python">
+          <i class="fab fa-python"></i>
+        </li>
+        <li class="card node">
+          <i class="fab fa-node-js"></i>
+        </li>
+        <li class="card css">
+          <i class="fab fa-css3-alt"></i>
+        </li>
+        <li class="card html">
+          <i class="fab fa-html5"></i>
+        </li>
+        <li class="card react">
+          <i class="fab fa-react"></i>
+        </li>
+        <li class="card bootstrap">
+          <i class="fab fa-bootstrap"></i>
+        </li>
+      </ul>
+      
+      <div id="Alert">
+       
+      </div>
+      <section id="current-container" class="current-container">
+        
+        <table id="current-table" class="current-table">
+          <tr>
+            <th colspan="4">
+              Current Game History
+            </th>
+          </tr>
+          <tr>
+            <th>Match #</th>
+            <th>Time Elapsed</th>
+            <th>Number of Moves</th>
+            <th>
+              <i id="star1" class="fa fa-star star"></i> Rating
+              <i id="star1" class="fa fa-star star"></i>
+            </th>
+          </tr>
+        </table>
+      </section>
+    </div>
+
+   
+  </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,254 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Fredoka One', cursive;
+
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #00356b;
+}
+
+#start {
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#start h1 {
+  color: #02cc16;
+  letter-spacing: 5px;
+  font-size: 80px;
+  margin-bottom: 50px;
+  text-shadow: 2px 2px #3f4e34;
+}
+#start-button {
+  padding: 10px 15px;
+  font-family: 'Fredoka One', cursive;
+  font-size: 25px;
+  border-radius: 25px;
+  background-color: #02cc16;
+  outline: none;
+  color: #3f4e34;
+}
+#start-button:hover {
+  box-shadow: 0 0px 4px #87a86f;
+  cursor: pointer;
+}
+.container {
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*
+* Styles for the Score Panel
+*/
+
+.score-panel {
+  margin: 30px auto 20px auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background: linear-gradient(160deg, #29e779 0%, #4568dc 100%);
+  color: white;
+  border-radius: 10px;
+}
+
+.restart {
+  cursor: pointer;
+}
+/*
+* Styles for the deck of cards
+*/
+
+.deck {
+  align-items: center;
+  background: linear-gradient(160deg, #29e779 0%, #4568dc 100%);
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 0 3em;
+  min-height: 680px;
+  padding: 32px;
+  width: 660px;
+}
+
+.deck .card {
+  align-items: center;
+  background: #2e3d49;
+  border-radius: 8px;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  font-size: 0;
+  justify-content: center;
+  height: 130px;
+  width: 130px;
+}
+
+.deck .card.open {
+  transition: all 0.2s ease-in-out;
+  background: #02b3e4;
+  cursor: default;
+  transform: rotateY(0);
+}
+
+.deck .card.show {
+  font-size: 50px;
+}
+
+.deck .card.match {
+  cursor: default;
+  background: #02cc16;
+  font-size: 50px;
+}
+
+/*
+* Styles for the Current Game
+*/
+
+.current-container {
+  display: none;
+}
+
+.current-container h2 {
+  text-align: center;
+}
+
+.current-table {
+  margin: auto;
+  width: 660px;
+}
+
+.current-table th {
+  background-color: #4568dc;
+  color: #fff;
+  font-weight: 200;
+}
+
+.current-table tr,
+.current-table td {
+  background-color: white;
+}
+
+.current-table tr,
+.current-table th,
+.current-table td {
+  border: 1px solid silver;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+/*
+* Styles for Animations
+*/
+
+@keyframes shake {
+  0% {
+    transform: translate(3px, 3px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-3px, -6px) rotate(-3deg);
+  }
+  20% {
+    transform: translate(-9px, 0px) rotate(3deg);
+  }
+  30% {
+    transform: translate(9px, 6px) rotate(0deg);
+  }
+  40% {
+    transform: translate(3px, -3px) rotate(3deg);
+  }
+  50% {
+    transform: translate(-3px, 6px) rotate(-3deg);
+  }
+  60% {
+    transform: translate(-9px, 3px) rotate(0deg);
+  }
+  70% {
+    transform: translate(9px, 3px) rotate(-3deg);
+  }
+  80% {
+    transform: translate(-3px, -3px) rotate(3deg);
+  }
+  90% {
+    transform: translate(3px, 6px) rotate(0deg);
+  }
+  100% {
+    transform: translate(3px, -6px) rotate(-3deg);
+  }
+}
+
+.shake-to-shuffle {
+  animation: shake 1s;
+}
+
+@keyframes wrong-cards-color {
+  0% {
+    background-color: #ff3535;
+  }
+  25% {
+    background-color: #ffbb00;
+  }
+  100% {
+    background-color: #ff3535;
+  }
+}
+
+@keyframes matching-cards-color {
+  0% {
+    background-color: #02ccba;
+  }
+  25% {
+    background-color: #02cc16;
+  }
+  50% {
+    background-color: #88ff00;
+  }
+  75% {
+    background-color: #02cc16;
+  }
+  100% {
+    background-color: #02ccba;
+  }
+}
+
+.toBeReflipped {
+  animation: wrong-cards-color 1.2s;
+}
+
+.match {
+  animation: matching-cards-color 1.2s;
+}
