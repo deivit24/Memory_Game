@@ -1,6 +1,6 @@
 const particlesJSON = {};
 
-// ParticlesJS Config. I added particles js as a background
+// ParticlesJS Config. I added particles js as a backgroun
 particlesJS('particles-js', {
   particles: {
     number: {
